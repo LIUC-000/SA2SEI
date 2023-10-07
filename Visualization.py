@@ -64,7 +64,7 @@ def main():
 
     X_test_embedding_feature_map, target = obtain_embedding_feature_map(model, test_dataloader)
 
-    visualize_data(X_test_embedding_feature_map, target.astype('int64'), "downstream_data_visual", 6)
+    visualize_data(X_test_embedding_feature_map, target.astype('int64'), "feature_visual", 6)
     print(sm.silhouette_score(X_test_embedding_feature_map, target, sample_size=len(X_test_embedding_feature_map), metric='euclidean'))
 
 if __name__ == "__main__":
