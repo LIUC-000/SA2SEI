@@ -1,0 +1,25 @@
+network:
+  projection_head:
+    mlp_hidden_size: 512
+    projection_size: 128
+
+trainer:
+  batch_size: 128
+  m: 0.996 # momentum update
+  max_epochs: 300
+  ft: 62
+  class_start: 0
+  class_end: 9
+  lr: 0.001
+
+iteration: 100
+
+finetune:
+  batch_size: 128
+  test_batch_size: 128
+  epochs: 200
+  ft: 62
+  class_start: 10
+  class_end: 15
+  lr: 0.001
+  k_shot: 10

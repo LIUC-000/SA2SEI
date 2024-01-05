@@ -1,0 +1,33 @@
+network:
+  name: SA2SEI
+  fine_tune_from: 'SA2SEI_300-epochs'
+  projection_head:
+    mlp_hidden_size: 512
+    projection_size: 128
+
+trainer:
+  batch_size: 64
+  m: 0.996 # momentum update
+  checkpoint_interval: 5000
+  max_epochs: 300
+  num_workers: 4
+  class_start: 0
+  class_end: 89
+
+optimizer:
+  params:
+    lr: 0.001
+    weight_decay: 0.0001
+
+iteration: 30
+
+finetune:
+  batch_size: 10
+  test_batch_size: 10
+  epochs: 100
+  lr_max: 0.001
+  lr_min: 0.0001
+  cycles: 5
+  class_start: 0
+  class_end: 9
+  k_shot: 20
